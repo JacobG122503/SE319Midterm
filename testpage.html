@@ -1,0 +1,40 @@
+<!--Test page to get my code working-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Page</title>
+    <style>
+        body {
+            background-color: grey;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h1>Test Page</h1>
+    
+    <h2>Binary Convert: </h2>
+    <label for="userInput">Enter a base 10 number:</label>
+    <input type="text" id="userInput" onkeypress="handleKeyPress(event, 'binary')">
+    <button onclick="binaryConvert()">Convert</button>
+    <h3 id="output"></h3>
+
+    <h2>Universal Convert: </h2>
+    <label for="uniUserInput">Enter a base 10 number:</label>
+    <input type="text" id="uniUserInput" onkeypress="handleKeyPress(event, 'uni')">
+
+    <label for="cars">Base to convert to:</label>
+    <input type="text" id="uniBase" onkeypress="handleKeyPress(event, 'uni')">
+    
+    <button onclick="universalConvert()">Convert</button>
+    <h3 id="uniOutput"></h3>
+
+    <script src="conversion.js"></script>
+</body>
+
+</html>
