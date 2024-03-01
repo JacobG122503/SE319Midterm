@@ -1,26 +1,5 @@
 //NOTE: Okay for JSON do like pastBase, newBase, pastNumber, newNumber
 
-function binaryConvert() {
-    document.getElementById("output").style.color = "mediumseagreen";
-    var toConvert = parseInt(document.getElementById('userInput').value);
-    let binary = "";
-
-    if (isNaN(toConvert)) {
-        document.getElementById("output").style.color = "red";
-        document.getElementById("output").innerText = "ERROR: Please type a number";
-        return;
-    }
-
-    while (toConvert !== 0) {
-        binary = (toConvert % 2) + binary;
-        toConvert = Math.floor(toConvert / 2);
-    }
-
-    if (binary === "") binary = "0";
-
-    document.getElementById('output').innerText = binary;
-}
-
 function universalConvert() {
     document.getElementById("uniOutput").style.color = "mediumseagreen";
     let toConvert = parseInt(document.getElementById('uniUserInput').value);
@@ -33,10 +12,16 @@ function universalConvert() {
         return;
     }
 
+    if (toBase < 2 || toBase > 36) {
+        document.getElementById("uniOutput").style.color = "red";
+        document.getElementById("uniOutput").innerText = "ERROR: Please type a base between 2 and 36";
+        return;
+    }
+
     while (toConvert !== 0) {
         let remainder = toConvert % toBase;
-        result = (toBase === 16 && remainder >= 10 && remainder <= 15) ? (convertToHexLetter(remainder) + result) : (remainder + result);
-        //result = (toConvert % toBase) + result;
+        result = (toBase > 10) ? (convertToLetter(remainder) + result) : (remainder + result);
+
         toConvert = Math.floor(toConvert / toBase);
     }
 
@@ -48,27 +33,44 @@ function universalConvert() {
 
 function handleKeyPress(event, type) {
     // Check if the key pressed is Enter (key code 13)
-    if (event.keyCode === 13 && type == "binary") {
-        binaryConvert();
-    }
     if (event.keyCode === 13 && type == "uni") {
         universalConvert();
     }
 }
 
-function convertToHexLetter(number) {
-    const hexLetters = {
+function convertToLetter(number) {
+    const letters = {
         '10': 'A',
         '11': 'B',
         '12': 'C',
         '13': 'D',
         '14': 'E',
-        '15': 'F'
+        '15': 'F',
+        '16': 'G',
+        '17': 'H',
+        '18': 'I',
+        '19': 'J',
+        '20': 'K',
+        '21': 'L',
+        '22': 'M',
+        '23': 'N',
+        '24': 'O',
+        '25': 'P',
+        '26': 'Q',
+        '27': 'R',
+        '28': 'S',
+        '29': 'T',
+        '30': 'U',
+        '31': 'V',
+        '32': 'W',
+        '33': 'X',
+        '34': 'Y',
+        '35': 'Z'
     };
 
-    if (hexLetters.hasOwnProperty(number)) {
-        return hexLetters[number];
+    if (letters.hasOwnProperty(number)) {
+        return letters[number];
     } else {
-        return "ERROR";
+        return number;
     }
 }
