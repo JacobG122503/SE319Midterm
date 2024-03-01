@@ -37,9 +37,12 @@ function anyToBaseTen(toConvert, fromBase) {
     let result = 0;
     //Change to string so I can iterate through
     toConvert = toConvert.toString();
+    //Split array becaue there may be letters and we dont want the string length to increase. 
+    toConvert = toConvert.split(''); 
 
     for (let i = toConvert.length - 1, j = 0; i >= 0; i--, j++) {
         if (fromBase > 10) toConvert[j] = letterToNumber(toConvert[j]);
+
         result += toConvert[j] * (Math.pow(fromBase, i));
     }
 
@@ -70,7 +73,7 @@ function handleKeyPress(event, type) {
 }
 
 function numberToLetter(number) {
-    const letters = {
+    const numToLet = {
         '10': 'A',
         '11': 'B',
         '12': 'C',
@@ -99,15 +102,15 @@ function numberToLetter(number) {
         '35': 'Z'
     };
 
-    if (letters.hasOwnProperty(number)) {
-        return letters[number];
+    if (numToLet.hasOwnProperty(number)) {
+        return numToLet[number];
     } else {
         return number;
     }
 }
 
 function letterToNumber(letter) {
-    const letters = {
+    const letToNum = {
         'A': '10',
         'B': '11',
         'C': '12',
@@ -136,9 +139,10 @@ function letterToNumber(letter) {
         'Z': '35'
     };
 
-    if (letters.hasOwnProperty(letter)) {
-        return letters[letter];
+    if (letToNum.hasOwnProperty(letter)) {
+        return letToNum[letter];
     } else {
+        // "letter", its really just a number. Bad naming choice.
         return letter;
     }
 }
