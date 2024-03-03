@@ -1,5 +1,13 @@
 //NOTE: Okay for JSON do like pastBase, newBase, pastNumber, newNumber
-
+let resultDTO;
+fetch('resultDTO.json')
+    .then(response => response.json())
+    .then(data => {
+        resultDTO = data;
+    })
+    .catch(error => {
+        console.error('Error loading the JSON file:', error);
+    });
 
 function convert() {
     //Steps: 
@@ -10,6 +18,7 @@ function convert() {
     document.getElementById("output").style.color = "mediumseagreen";
     let fromBase = parseInt(document.getElementById('fromBase').value);
     let toConvert = document.getElementById('toConvert').value;
+    let ogNumber = toConvert;
     if (fromBase <= 10) toConvert = parseInt(toConvert);
     let toBase = parseInt(document.getElementById('toBase').value);
 
@@ -30,7 +39,22 @@ function convert() {
 
     if (toBase != 10) toConvert = baseTenToAny(toConvert, toBase);
 
-    document.getElementById('output').innerText = toConvert;
+    result = returnResult(ogNumber, fromBase, toBase, toConvert);
+
+    document.getElementById('output').innerText = result.resultNum;
+}
+
+function returnResult(fromNum, fromBase, toBase, resultNum) {
+    let result = {
+        ...resultDTO,
+        "fromNum": fromNum,
+        "fromBase": fromBase,
+        "toBase": toBase,
+        "resultNum": resultNum
+    };
+    console.log(result);
+
+    return result;
 }
 
 function anyToBaseTen(toConvert, fromBase) {
@@ -38,7 +62,7 @@ function anyToBaseTen(toConvert, fromBase) {
     //Change to string so I can iterate through
     toConvert = toConvert.toString();
     //Split array becaue there may be letters and we dont want the string length to increase. 
-    toConvert = toConvert.split(''); 
+    toConvert = toConvert.split('');
 
     for (let i = toConvert.length - 1, j = 0; i >= 0; i--, j++) {
         if (fromBase > 10) toConvert[j] = letterToNumber(toConvert[j]);
