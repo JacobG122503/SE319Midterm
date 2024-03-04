@@ -1,6 +1,6 @@
 //NOTE: Okay for JSON do like pastBase, newBase, pastNumber, newNumber
 let resultDTO;
-fetch('resultDTO.json')
+fetch('data.json')
     .then(response => response.json())
     .then(data => {
         resultDTO = data;
