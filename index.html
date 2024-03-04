@@ -4,8 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Base Conversion</title>
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./navbar.css">
+    
 </head>
 <body>
+
+  <header data-bs-theme="dark">
+    <div class="navbar_">
+        <div style="text-align: left;">
+        <a href="index.html" class="bttn btn-2">Base Conversion</a>
+          <a href="examples.html" class="bttn btn-1">Examples</a>
+          <a href="about.html" class="bttn btn-2">About</a>
+        </div>
+        </div>
+  </header>
+
+    <h1>Base Conversion</h1>
+    <div class="input-space">
+    <label for="toConvert">Enter number to convert:</label>
+    <input type="text" id="toConvert" onkeypress="handleKeyPress(event)">
+    <br>
+    </div>
+
+    <div class="input-space">
+    <label for="fromBase">Enter starting base:</label>
+    <input type="text" id="fromBase" onkeypress="handleKeyPress(event)">
+    <br>
+    </div>
+
+    <div class="input-space">
+    <label for="toBase">Enter target base:</label>
+    <input type="text" id="toBase" onkeypress="handleKeyPress(event)">
+    </div>
     
+    <br><br>
+    <button onclick="convert()">Convert</button>
+    <h3 id="convert"></h3>
+    
+    <h3 id="output"></h3>
+
+    <script src="index.js"></script>
+
 </body>
 </html>

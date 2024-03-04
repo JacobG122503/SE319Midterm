@@ -1,0 +1,67 @@
+h1 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.btn-2:hover {
+    background-color: aliceblue;
+}
+
+.btn-1:hover {
+    background-color: aliceblue;
+}
+
+.bttn {
+    --bs-btn-bg: transparent;
+    --bs-btn-border-width: 0px;
+    --bs-btn-border-color: transparent;
+    --bs-btn-border-radius: 0px;
+    --bs-btn-hover-border-color: transparent;
+    --bs-btn-disabled-opacity: 0.65;
+    display: inline-block;
+    padding: 10px 10px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    border: 0px solid transparent;
+    background-color: var(--bs-btn-bg);
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+
+}
+
+
+body {
+    margin: 0px 0px;
+}
+
+.navbar_ {
+    background-color: white;
+    --bs-navbar-padding-x: 0;
+    --bs-navbar-padding-y: 0.5rem;
+    --bs-navbar-color: rgba(var(--bs-emphasis-color-rgb), 0.65);
+    --bs-navbar-hover-color: rgba(var(--bs-emphasis-color-rgb), 0.8);
+    --bs-navbar-disabled-color: rgba(var(--bs-emphasis-color-rgb), 0.3);
+    --bs-navbar-active-color: rgba(var(--bs-emphasis-color-rgb), 1);
+    --bs-navbar-brand-padding-y: 0.3125rem;
+    --bs-navbar-brand-margin-end: 1rem;
+    --bs-navbar-brand-font-size: 1.25rem;
+    --bs-navbar-brand-color: rgba(var(--bs-emphasis-color-rgb), 1);
+    --bs-navbar-brand-hover-color: rgba(var(--bs-emphasis-color-rgb), 1);
+    --bs-navbar-nav-link-padding-x: 0.5rem;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--bs-navbar-padding-y) var(--bs-navbar-padding-x)
+   
+}
