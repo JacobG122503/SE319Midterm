@@ -22,9 +22,16 @@ function convert() {
     if (fromBase <= 10) toConvert = parseInt(toConvert);
     let toBase = parseInt(document.getElementById('toBase').value);
 
+    //General checks to make sure number is type correctly
     if ((isNaN(toConvert) && fromBase <= 10) || isNaN(toBase) || isNaN(fromBase)) {
         document.getElementById("output").style.color = "red";
         document.getElementById("output").innerText = "ERROR: Type numbers correctly";
+        return;
+    }
+
+    if (!isValidNumberForBase(toConvert.toString(), fromBase)) {
+        document.getElementById("output").style.color = "red";
+        document.getElementById("output").innerText = `ERROR: The number ${toConvert} is not a valid number for base ${fromBase}`;
         return;
     }
 
@@ -42,6 +49,23 @@ function convert() {
     result = returnResult(ogNumber, fromBase, toBase, toConvert);
 
     document.getElementById('output').innerText = result.resultNum;
+}
+
+function isValidNumberForBase(number, base) {
+    const validChars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    number = number.toUpperCase();
+
+    //Check if number to convert is the correct base. 
+    for (let i = 0; i < number.length; i++) {
+        let char = number.charAt(i);
+
+        let charIndex = validChars.indexOf(char);
+        if (charIndex === -1 || charIndex >= base) {
+            return false; 
+        }
+    }
+
+    return true;
 }
 
 function returnResult(fromNum, fromBase, toBase, resultNum) {
