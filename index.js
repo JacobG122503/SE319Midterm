@@ -15,7 +15,7 @@ function convert() {
     //1. Convert to base ten
     //2. send to baseTenToAny
     //3. Return that number
-    document.getElementById("output").style.color = "mediumseagreen";
+    document.getElementById("output").style.color = "black";
     let fromBase = parseInt(document.getElementById('fromBase').value);
     let toConvert = document.getElementById('toConvert').value;
     let ogNumber = toConvert;
@@ -48,7 +48,12 @@ function convert() {
 
     result = returnResult(ogNumber, fromBase, toBase, toConvert);
 
-    document.getElementById('output').innerText = result.resultNum;
+    document.getElementById('output').innerHTML = `
+    <div>
+        <p> Original Number: ${result.fromNum}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;New Number: ${result.resultNum} </p>
+        <p> Original Base: ${result.fromBase}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;New Base: ${result.toBase} </p>
+    </div>
+    `;
 }
 
 function isValidNumberForBase(number, base) {
