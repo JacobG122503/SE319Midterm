@@ -3,13 +3,10 @@ h1 {
     padding-bottom: 10px;
 }
 
-.btn-2:hover {
+.bttn:hover {
     background-color: aliceblue;
 }
 
-.btn-1:hover {
-    background-color: aliceblue;
-}
 
 .bttn {
     display: inline-block;
