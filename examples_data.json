@@ -1,0 +1,40 @@
+{
+    "examples": [
+        {
+            "url": "./examplepics/binarytodeci1.png",
+            "problem": "101010",
+            "answer": "42",
+            "originalbase": "binary",
+            "finalbase": "decimal"
+        },
+        {
+            "url": "./examplepics/decitobinary1.png",
+            "problem": "57",
+            "answer": "111001",
+            "originalbase": "decimal",
+            "finalbase": "binary"
+        },
+        {
+            "url": "./examplepics/decitobinary2.png",
+            "problem": "43",
+            "answer": "101011",
+            "originalbase": "decimal",
+            "finalbase": "binary"
+        },
+        {
+            "url": "./examplepics/binarytohexa1.png",
+            "problem": "0101101000101110",
+            "answer": "5A2E",
+            "originalbase": "binary",
+            "finalbase": "hexadecimal"
+        },
+        {
+            
+            "url": "./examplepics/hexatobinary1.png",
+            "problem": "67FE",
+            "answer": "0110011111110011",
+            "originalbase": "hexadecimal",
+            "finalbase": "binary"
+        }
+    ]
+}
