@@ -35,6 +35,34 @@
             "answer": "0110011111110011",
             "originalbase": "hexadecimal",
             "finalbase": "binary"
+        },
+        {
+            "url": "./examplepics/binarytooctal.png",
+            "problem": "001111101010",
+            "answer": "1752",
+            "originalbase": "binary",
+            "finalbase": "octal"
+        },
+        {
+            "url": "./examplepics/hexatodeci1.png",
+            "problem": "13EA",
+            "answer": "4426",
+            "originalbase": "hexadecimal",
+            "finalbase": "decimal"
+        },
+        {
+            "url": "./examplepics/decitobase5.png",
+            "problem": "88",
+            "answer": "323",
+            "originalbase": "decimal",
+            "finalbase": "base 5"
+        },
+        {
+            "url": "./examplepics/base5todeci.png",
+            "problem": "1243",
+            "answer": "198",
+            "originalbase": "bsae 5",
+            "finalbase": "decimal"
         }
     ]
 }
